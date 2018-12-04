@@ -1,0 +1,18 @@
+#[프로젝트 정보 - actuator info에 노출]
+info:
+  group: "@project.groupId@"
+  artifact: "@project.artifactId@"
+  name: "@project.name@"
+  description: "@project.description@"
+  version: "@project.version@"
+  contact: 민병돈, 이장완, 정성현
+  app:
+    encoding: "@project.build.sourceEncoding@"
+    java:
+      source: "@java.version@"
+      target: "@java.version@"
+
+#[Spring 설정]
+spring:
+  application:
+    name: "@project.artifactId@"
