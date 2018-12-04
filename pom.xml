@@ -72,6 +72,11 @@
 			<artifactId>tiles-jsp</artifactId>
 			<version>${tiles-jsp.version}</version>
 		</dependency>
+		<!-- Spring Security taglibs -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+		</dependency>
 
 		<!-- 개발 또는 Test용 -->
 		<dependency>
