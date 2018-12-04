@@ -32,3 +32,9 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+  #UTF-8 인코딩 설정
+  http:
+    encoding:
+      enabled: true
+      force: true
+      charset: utf-8  
