@@ -12,6 +12,10 @@ info:
       source: "@java.version@"
       target: "@java.version@"
 
+#[Application 설정]
+app-config:
+  test: "테스트설정값"
+
 #[Spring 설정]
 spring:
   application:
