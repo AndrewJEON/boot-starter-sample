@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- local 프로파일용 설정 -->
+<included scan="true" scanPeriod="2 seconds">
+
+	<!-- 개별 LOGGING 정책 설정 -->
+	<logger name="com.sample.myapplication" level="DEBUG" />
+
+	<logger name="jdbc.sqlonly" level="ERROR" />
+	<logger name="jdbc.sqltiming" level="INFO" />
+	<logger name="jdbc.audit" level="ERROR" />
+	<logger name="jdbc.resultset" level="ERROR" />
+	<logger name="jdbc.resultsettable" level="INFO" />
+	<logger name="jdbc.connection" level="ERROR" />
+
+	<logger name="com.zaxxer.hikari" level="INFO" />
+
+	<logger name="org.apache.tiles" level="INFO" />
+	<logger name="org.apache.commons" level="INFO" />
+
+	<logger name="org.mybatis" level="INFO" />
+
+	<logger name="org.apache.tomcat.util.net.NioEndpoint" level="INFO" />
+
+	<logger name="org.springframework.transaction.support" level="INFO" />
+	<logger name="org.springframework.transaction" level="INFO" />
+
+	<logger name="org.springframework.security.access.prepost" level="INFO" />
+	<logger name="org.springframework.security.access" level="INFO" />
+	<logger name="org.springframework.security.web.access.expression" level="INFO" />
+	<logger name="org.springframework.security.web.util.matcher" level="INFO" />
+	<logger name="org.springframework.security.web.FilterChainProxy" level="DEBUG" />
+	<logger name="org.springframework.security.web" level="DEBUG" />
+	<logger name="org.springframework.security" level="INFO" />
+
+	<logger name="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" level="INFO" />
+	<logger name="org.springframework.web.servlet.mvc.WebContentInterceptor" level="INFO" />
+	<logger name="org.springframework.web.servlet.DispatcherServlet" level="INFO" />
+	<logger name="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" level="INFO" />
+	<logger name="org.springframework.web.servlet" level="INFO" />
+	<logger name="org.springframework.web.method" level="INFO" />
+	<logger name="org.springframework.web.context" level="INFO" />
+	<logger name="org.springframework.web" level="INFO" />
+
+	<logger name="org.springframework.aop.aspectj.annotation" level="INFO" />
+	<logger name="org.springframework.aop.framework" level="INFO" />
+
+	<logger name="org.springframework.beans" level="INFO" />
+	<logger name="org.springframework.jndi" level="INFO" />
+	<logger name="org.springframework.jdbc" level="INFO" />
+	<logger name="org.springframework.context" level="INFO" />
+	<logger name="org.springframework.core" level="INFO" />
+	<logger name="org.springframework" level="INFO" />
+
+	<!-- 사용한 Appender들을 include -->
+	<include resource="logback/appender-console.xml" />
+	<include resource="logback/appender-file-current.xml" />
+	<!-- <include resource="logback/appender-timerollingfile.xml" /> -->
+	<!-- <include resource="logback/appender-sizeandtimerollingfile.xml" /> -->
+
+	<!-- ROOT LEVEL LOGGING 정책 및 Appender목록 설정 -->
+	<root level="DEBUG">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE_CURRENT" />
+		<!-- <appender-ref ref="TIME_ROLLING_FILE" /> -->
+		<!-- <appender-ref ref="TIME_ROLLING_FILE_WARN" /> -->
+		<!-- <appender-ref ref="SIZE_AND_TIME_ROLLING_FILE" /> -->
+		<!-- <appender-ref ref="SIZE_AND_TIME_ROLLING_FILE_WARN" /> -->
+	</root>
+
+</included>
