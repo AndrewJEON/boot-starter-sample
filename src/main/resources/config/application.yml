@@ -37,4 +37,12 @@ spring:
     encoding:
       enabled: true
       force: true
-      charset: utf-8  
+      charset: utf-8
+  #Jackson 기본 설정(최소)
+  jackson:
+    time-zone: "Asia/Seoul"
+    locale: "ko_KR"
+    serialization:
+      indent-output: false  #들여쓰기 여부
+    deserialization:
+      fail-on-unknown-properties: false #알지못하는 properties가 들어올 경우 실패처리 할지 여부
