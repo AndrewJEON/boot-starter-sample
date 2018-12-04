@@ -20,3 +20,11 @@ app-config:
 spring:
   application:
     name: "@project.artifactId@"
+  #Spring MVC 설정
+  mvc:
+    #Content 협상(json/xml)
+    contentnegotiation:
+      favor-parameter: true
+      media-types:
+        json: application/json
+        xml: application/xml
