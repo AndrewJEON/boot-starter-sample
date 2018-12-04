@@ -1,0 +1,5 @@
+==============================================
+[${spring.application.name}]
+- application.version: ${info.version}
+- spring-boot.version: ${spring-boot.formatted-version}
+==============================================
