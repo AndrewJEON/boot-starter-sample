@@ -11,6 +11,8 @@
     * JSP를 이용한 View 처리가 가능할 것
         * Tiles와 VueJS를 이용
     * Spring Security를 이용한 인증 및 인가 체계 도입
+    * Spring Boot Reference 학습.
+        * Spring Boot Reference Guide 문서 순서대로 Sample 작성 진행
 
 * 프로젝트 환경
     * Java & Spring Framework Base Line
