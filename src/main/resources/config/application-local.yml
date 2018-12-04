@@ -1,0 +1,4 @@
+#Spring [LOCAL] Profile
+
+app-config:
+  test: "로컬 - 테스트설정값"
