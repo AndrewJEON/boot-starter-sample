@@ -93,7 +93,7 @@ mybatis:
     map-underscore-to-camel-case: true  #UnderScore표기법에서 CamelCase표기법으로 변경 가능여부. default: false
     jdbc-type-for-null: nvarchar  #null인 경우 JDBC DataType을 어떤 것으로 처리할지
     log-prefix: "[SQL]" #Logging 접두어
-    log-impl: SLF4J   #Logging 구현체
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl   #Logging 구현체 - Mybatis JAR내 logging 구현체 클래스를 찾으면 됨.
     safe-result-handler-enabled: false  #중첩된 문장에서 ResultHandler 사용가능 여부.
     default-fetch-size: 1000  #기본 패칭 크기
   type-handlers-package: #추가 타입 핸들러 패키지 목록 정의
