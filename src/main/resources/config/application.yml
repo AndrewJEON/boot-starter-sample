@@ -26,6 +26,9 @@ server:
 spring:
   application:
     name: "@project.artifactId@"
+  aop:
+    auto: true  #Add @EnableAspectJAutoProxy
+    proxy-target-class: true  #whether subclass-based (CGLIB) proxies are to be create (true)
   #PID 파일 기록 설정
   pid:
     fail-on-write-error: true   #PID파일 기록에 실패할 경우 에러
