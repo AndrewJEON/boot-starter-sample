@@ -46,3 +46,17 @@ spring:
       indent-output: false  #들여쓰기 여부
     deserialization:
       fail-on-unknown-properties: false #알지못하는 properties가 들어올 경우 실패처리 할지 여부
+
+#[Actuator 설정]
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: info, health
+    web:
+      base-path: /management
+      exposure:
+        include: info, health
+  info:
+    defaults:
+      enabled: true
