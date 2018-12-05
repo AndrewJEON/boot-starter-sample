@@ -16,10 +16,20 @@ info:
 app-config:
   test: "테스트설정값"
 
+#[Server 설정]
+server:
+  use-forward-headers: true   # X-Forwarded-* 사용을 위함.
+  tomcat:
+    max-threads: 400 #default 200
+
 #[Spring 설정]
 spring:
   application:
     name: "@project.artifactId@"
+  #PID 파일 기록 설정
+  pid:
+    fail-on-write-error: true   #PID파일 기록에 실패할 경우 에러
+    file: "@project.artifactId@.pid"    #PID 파일명
   #Spring MVC 설정
   mvc:
     #Content 협상(json/xml)
@@ -37,15 +47,30 @@ spring:
     encoding:
       enabled: true
       force: true
-      charset: utf-8
+      charset: UTF-8
   #Jackson 기본 설정(최소)
   jackson:
+    date-format: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    joda-date-time-format: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     time-zone: "Asia/Seoul"
     locale: "ko_KR"
     serialization:
+      write-dates-as-timestamps: false  #TimeStamp 쓰기 금지.
+      #활성화 시 Java8 DateTime.ISO_ZONED_DATE_TIME로 직렬화(ex.'2011-12-03T10:15:30+01:00[Europe/Paris]). ISO-8601사양에서 해당 정보가 포함된 형식 정의하지 않으면 호환성 문제 발생 가능. 비활성 처리.
+      write-dates-with-zone-id: false
       indent-output: false  #들여쓰기 여부
     deserialization:
       fail-on-unknown-properties: false #알지못하는 properties가 들어올 경우 실패처리 할지 여부
+    mapper:
+      sort-properties-alphabetically: false #직렬화시 알파벳 정렬 여부. 비활성화 처리.
+  #Devtools 설정
+  devtools:
+    restart:
+      enabled: true   #소스 수정 시 자동 재시작 설정
+  #출력 설정
+  output:
+    ansi:
+      enabled: never  #ANSI-colored 출력 사용 하지 않음
 
 #[Actuator 설정]
 management:
@@ -60,3 +85,7 @@ management:
   info:
     defaults:
       enabled: true
+
+#[Logback설정 - 전체 커스텀 설정]
+logging:
+  config: classpath:logback-spring.xml
