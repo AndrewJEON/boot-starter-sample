@@ -25,6 +25,11 @@
 		<spring-cloud.version>Greenwich.M3</spring-cloud.version>
 
 		<tiles-jsp.version>3.0.8</tiles-jsp.version>
+		<woodstox.version>4.4.1</woodstox.version>
+		<cblib.version>3.2.8</cblib.version>
+		<guava.version>27.0.1-jre</guava.version>
+		<commons-text.version>1.6</commons-text.version>
+		<commons-io.version>2.6</commons-io.version>
 	</properties>
 
 	<dependencies>
@@ -56,6 +61,13 @@
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
 
+		<!-- Spring AOP시 Java Dynamic Proxy가 아닌 CGLB Proxy를 사용하기 위함. -->
+<!-- 		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>${cblib.version}</version>
+		</dependency> -->
+
 		<!-- JSP 표준 태그 라이브러리 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -78,6 +90,41 @@
 			<artifactId>spring-security-taglibs</artifactId>
 		</dependency>
 
+		<!-- Google Guava Util -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+
+		<!-- apache Common Uitls-->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>	<!-- java.lang의 클래스에 대해 추가 기능 제공 라이브러리 -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>	<!-- 문자열 작업 알고리즘에 중점을 둔 라이브러리 -->
+			<version>${commons-text.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>		<!-- I/O기능 개발을 지원하는 유틸 라이브러리 -->
+			<version>${commons-io.version}</version>
+		</dependency>
+
+		<!-- JSON/XML -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+		<!-- woodstox: JDK의 StAX구현보다 빠르고 출력모양 및 공간 처리가 우수 -->
+		<dependency>
+		    <groupId>org.codehaus.woodstox</groupId>
+		    <artifactId>woodstox-core-asl</artifactId>
+		    <version>${woodstox.version}</version>
+		</dependency>
+
 		<!-- 개발 또는 Test용 -->
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -98,11 +145,6 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
