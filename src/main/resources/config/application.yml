@@ -5,7 +5,7 @@ info:
   name: "@project.name@"
   description: "@project.description@"
   version: "@project.version@"
-  contact: 민병돈, 이장완, 정성현
+  contact: 정성현 <hashmap27@gmail.com>
   app:
     encoding: "@project.build.sourceEncoding@"
     java:
