@@ -86,6 +86,21 @@ management:
     defaults:
       enabled: true
 
+#[MyBatis 설정]
+mybatis:
+  configuration:
+    default-statement-timeout: 300  #기본타입아웃값(초)
+    map-underscore-to-camel-case: true  #UnderScore표기법에서 CamelCase표기법으로 변경 가능여부. default: false
+    jdbc-type-for-null: nvarchar  #null인 경우 JDBC DataType을 어떤 것으로 처리할지
+    log-prefix: "[SQL]" #Logging 접두어
+    log-impl: SLF4J   #Logging 구현체
+    safe-result-handler-enabled: false  #중첩된 문장에서 ResultHandler 사용가능 여부.
+    default-fetch-size: 1000  #기본 패칭 크기
+  type-handlers-package: #추가 타입 핸들러 패키지 목록 정의
+  mapper-locations:
+  - "mybatis/common/mybatis-mapper-mysql.xml" #MySql 공통
+  #- "mybatis/common/mybatis-mapper-oracle.xml"  #Oracle 공통
+  - "mybatis/mapper/**/*.xml"
 #[Logback설정 - 전체 커스텀 설정]
 logging:
   config: classpath:logback-spring.xml
