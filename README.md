@@ -38,6 +38,7 @@
     * spring-cloud-starter-sleuth: 분산트레이스 지원(TraceId, SpanId부여)
     * spring-boot-starter-actuator: Production Level의 모니터링 지원
     * spring-boot-starter-aop: Spring AOP
+    * spring-data-commons: paging, sorting 처리를 위함.
     * mybatis-spring-boot-starter: 마이바티스 지원
     * (개발용)lombok: 코딩생산성 향싱 지원
     * jstl: JSP 표준 태그 라이브러리
